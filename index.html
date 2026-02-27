@@ -1,0 +1,234 @@
+<<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MANOS DE ORO | Reparaciones Profesionales</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+font-family:'Poppins', sans-serif;
+background-color:#000;
+color:white;
+}
+
+header{
+background: linear-gradient(90deg,#1a001f,#4b0082);
+padding:20px;
+text-align:center;
+}
+
+.logo{
+width 1000px;
+}
+
+nav{
+text-align:center;
+background:#111;
+padding:10px;
+}
+
+nav a{
+color:white;
+margin:0 15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#a020f0;
+}
+
+.hero{
+padding:80px 20px;
+text-align:center;
+}
+
+.btn{
+background:#8000ff;
+color:white;
+padding:15px 30px;
+text-decoration:none;
+border-radius:5px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#a020f0;
+}
+
+.carrusel{
+width:100%;
+max-width:900px;
+margin:50px auto;
+overflow:hidden;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(128,0,255,0.4);
+}
+
+.slider{
+position:relative;
+width:100%;
+height:400px;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:0;
+transition:opacity 1s ease-in-out;
+}
+
+.slide.active{
+opacity:1;
+}
+
+.services{
+padding:50px 20px;
+background:#111;
+text-align:center;
+}
+
+.service-box{
+margin:20px;
+padding:20px;
+border:1px solid #8000ff;
+border-radius:10px;
+display:inline-block;
+width:250px;
+vertical-align:top;
+transition:0.3s;
+}
+
+.service-box:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 30px rgba(128,0,255,0.4);
+}
+
+.service-box img{
+width:100%;
+border-radius:8px;
+margin-bottom:15px;
+}
+
+footer{
+background:#1a001f;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+font-size:20px;
+text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="./imagenes/logo.png" alt="Logo MANOS DE ORO" class="logo">
+<p>Reparaciones Profesionales en Tapachula</p>
+</header>
+
+<nav>
+<a href="#">Inicio</a>
+<a href="#servicios">Servicios</a>
+<a href="#contacto">Contacto</a>
+</nav>
+
+<section class="hero">
+<h2>Expertos en Reparación Electrónica</h2>
+<p>Tecnología, precisión y garantía en cada trabajo.</p>
+<a class="btn" href="https://wa.me/529624961679" target="_blank">
+Solicitar Diagnóstico
+</a>
+</section>
+
+<section class="carrusel">
+  <div class="slider">
+    <img src="./imagenes/servicio1.webp" class="slide active">
+    <img src="./imagenes/servicio2.webp" class="slide">
+    <img src="./imagenes/servicio3.webp" class="slide">
+  </div>
+</section>
+
+<section id="servicios" class="services">
+<h2>Nuestros Servicios</h2>
+
+<div class="service-box">
+<img src="./imagenes/Celulares.webp">
+<h3>Celulares</h3>
+<p>Cambio de pantalla, software y más.</p>
+</div>
+
+<div class="service-box">
+<img src="./imagenes/computadoras.jpg">
+<h3>Computadoras</h3>
+<p>Mantenimiento y reparación.</p>
+</div>
+
+<div class="service-box">
+<img src="./imagenes/TVs.webp">
+<h3>TVs</h3>
+<p>Diagnóstico electrónico.</p>
+</div>
+
+<div class="service-box">
+<img src="./imagenes/placa.webp">
+<h3>Placa Madre</h3>
+<p>Reparación avanzada.</p>
+</div>
+
+</section>
+
+<footer id="contacto">
+<h3>Contacto</h3>
+<p>📍 Tapachula, México</p>
+<p>📲 +52 962 496 1679</p>
+<p>© 2026 MANOS DE ORO</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/529624961679" target="_blank">📲</a>
+
+<script>
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+function cambiarSlide(){
+slides[index].classList.remove("active");
+index = (index + 1) % slides.length;
+slides[index].classList.add("active");
+}
+
+setInterval(cambiarSlide, 4000);
+</script>
+<script>
+window.addEventListener("load", ()=>{
+const logo = document.querySelector(".logo");
+logo.style.opacity = 0;
+logo.style.transform = "scale(0.5)";
+logo.style.transition = "all 1s ease";
+
+setTimeout(()=>{
+logo.style.opacity = 1;
+logo.style.transform = "scale(1)";
+},300);
+});
+</script>
+</body>
+</html>
